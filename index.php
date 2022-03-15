@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($stmt = mysqli_prepare($link, $sql)) {
                     // Bind variables to the prepared statement as parameters
-                    mysqli_stmt_bind_param($stmt, "isiis", $param_user_id, $param_item_name, $param_quantity, $param_price, $param_thumbnail);
+                    mysqli_stmt_bind_param($stmt, "isiis", $param_user_id, $param_product_name, $param_quantity, $param_price, $param_thumbnail);
                     $param_user_id = $user_id;
                     $param_product_name = $product_name;
                     $param_quantity = 1;

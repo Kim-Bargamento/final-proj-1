@@ -60,8 +60,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_array($result)) {
                                 echo "<tr>";
-                                echo "<td>" . $row['item_name'] . "</td>";
-                                echo "<td> <img src=" . $row['thumbnail'] . "></td>";
+                                echo "<td>" . $row['product_name'] . "</td>";
+                                echo '<td> <img src="' . $row['thumbnail'] . '" width="220" height="250" alt="" /></td>';
                                 echo "<td>" . $row['quantity'] . "</td>";
                                 echo "<td>" . $row['price'] . "</td>";
                                 echo "<td>";
