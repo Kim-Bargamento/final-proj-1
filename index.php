@@ -1,7 +1,7 @@
 <?php
 // Initialize the session
 session_start();
-
+require_once "database.php";
 // Check if the user is logged in, if not then redirect him to login page
 $isLOGGED = isset($_SESSION["loggedin"]);
 
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $price = trim($_POST['price']);
         $thumbnail = trim($_POST['thumbnail']);
         $user_id = $_SESSION['id'];
-        $sql_for_find = "SELECT * FROM carts WHERE user_id = $user_id AND item_name = '$name'";
+        $sql_for_find = "SELECT * FROM carts WHERE user_id = $user_id AND product_name = '$product_name'";
 
         if ($result = mysqli_query($link, $sql_for_find)) {
             if (mysqli_num_rows($result) > 0) {
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $new_quantity =  $row['quantity'] + 1;
                 $new_price = $price * $new_quantity;
 
-                $sql_for_update = "UPDATE carts SET quantity = $new_quantity, price = $new_price WHERE user_id = $user_id AND item_name = '$name'";
+                $sql_for_update = "UPDATE carts SET quantity = $new_quantity, price = $new_price WHERE user_id = $user_id AND product_name = '$product_name'";
                 if ($result_for_update = mysqli_query($link, $sql_for_update)) {
                     if ($result_for_update) {
                         echo "<script type='text/javascript'>alert('succesfully updated')</script>";
@@ -33,13 +33,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo "<script type='text/javascript'>alert('something went')</script>";
                 }
             } elseif (mysqli_num_rows($result) == 0) {
-                $sql = "INSERT INTO carts (user_id, item_name, quantity, price, thumbnail) VALUES (?,?,?,?,?)";
+                $sql = "INSERT INTO carts (user_id, product_name, quantity, price, thumbnail) VALUES (?,?,?,?,?)";
 
                 if ($stmt = mysqli_prepare($link, $sql)) {
                     // Bind variables to the prepared statement as parameters
                     mysqli_stmt_bind_param($stmt, "isiis", $param_user_id, $param_item_name, $param_quantity, $param_price, $param_thumbnail);
                     $param_user_id = $user_id;
-                    $param_product_name = $param_product_name;
+                    $param_product_name = $product_name;
                     $param_quantity = 1;
                     $param_price = $price;
                     $param_thumbnail = $thumbnail;
@@ -214,7 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             echo     ' <a href="#" class="add_cart_btn "> <span>';
                             echo "<iframe name='norefresh' style='display:none;' ></iframe>";
                             echo "<form method='POST' target='norefresh'>";
-                            echo "<input type='hidden' name='name' value=" . $row['product_name'] . ">";
+                            echo "<input type='hidden' name='product_name' value=" . $row['product_name'] . ">";
                             echo "<input type='hidden' name='price' value=" . $row['price'] . ">";
                             echo "<input type='hidden' name='thumbnail' value=" . $row['thumbnail'] . ">";
                             echo "<input class='buy_button' name='add_to_cart' type='submit' value='Buy'>";
