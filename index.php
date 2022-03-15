@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $product_name = trim($_POST['product_name']);
         $price = trim($_POST['price']);
-        $thumbnail = trim($_POST['thumbnail']);
+        $thumbnail = $_POST['thumbnail'];
         $user_id = $_SESSION['id'];
         $sql_for_find = "SELECT * FROM carts WHERE user_id = $user_id AND product_name = '$product_name'";
 
@@ -211,7 +211,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             echo '<div class="box">';
                             echo  '<div class="img-box">';
                             echo      '<img src="' . $row['thumbnail'] . '" width="220" height="250" alt="" />';
-                            echo     ' <a href="#" class="add_cart_btn "> <span>';
+                            echo     '<a href="#" class="add_cart_btn "> <span>';
                             echo "<iframe name='norefresh' style='display:none;' ></iframe>";
                             echo "<form method='POST' target='norefresh'>";
                             echo "<input type='hidden' name='product_name' value=" . $row['product_name'] . ">";

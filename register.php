@@ -10,6 +10,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 }
 
 $username = "";
+$email = "";
 $password = "";
 $confirm_password = "";
 
@@ -60,16 +61,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $password = trim($_POST["confirm_password"]);
     }
-
+    $email = trim($_POST["email"]);
     // Prepare an insert statement
-    $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+    $sql = "INSERT INTO users (username, password, email) VALUES (?, ?, ?)";
 
     if ($stmt = mysqli_prepare($link, $sql)) {
         // Bind variables to the prepared statement as parameters
-        mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+        mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_password, $param_email);
 
         // Set parameters
         $param_username = $username;
+        $param_email = $email;
         $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
 
         // Attempt to execute the prepared statement
@@ -121,8 +123,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <label>Username</label>
             <input type="text" name="username" value="<?php echo $username; ?>">
-            <!-- <label>Email</label>
-            <input type="text" name="email"> -->
+            <label>Email</label>
+            <input type="text" name="email">
 
             <label>Password</label>
             <input type="password" name="password">
