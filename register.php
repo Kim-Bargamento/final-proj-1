@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Kimstore</title>
+    <title>FaceWatch</title>
 
 </head>
 
@@ -111,20 +111,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>Registration Form</h1>
         <a href="index.php"></a>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-
-            <!-- <label>Firstname</label>
-        <input type="text" name="firstname">
-        
-        <label>Lastname</label>
-        <input type="text" name="lastname">-->
-
-
+        <form class="form-log" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
             <label>Username</label>
-            <input type="text" name="username" value="<?php echo $username; ?>">
+            <input type="text" autocomplete="off" name="username" value="<?php echo $username; ?>">
             <label>Email</label>
-            <input type="text" name="email">
+            <input type="text" name="email" autocomplete="off">
 
             <label>Password</label>
             <input type="password" name="password">

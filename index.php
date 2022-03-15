@@ -109,14 +109,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 if ($isLOGGED == false) {
                                     echo '
                                     <li class="nav-item">
-                                        <a href="login.php"><input type="button" value="Logn"></a>
+                                        <a href="login.php"><input type="button" value="Login"></a>
                                     </li>
                                     ';
                                 } else {
                                     echo '
                                     <li class="nav-item">
                                          <div class="cart">
-                                             <a href="cart.php"><i class="fas fa-shopping-cart"></i></a>
+                                             <a href="cart.php"><i class="fas fa-shopping-cart" ></i></a>
                                          </div>
                                     </li>
                                     <li class="nav-item">
@@ -183,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="col-md-6">
                         <div class="img-box">
-                            <img src="./img/download (1).jfif" width="500" height="350" alt="img1" />
+                            <img src="./img/m128239-0038_modelpage_laying_down_landscape.png" width="500" height="350" alt="img1" />
                         </div>
                     </div>
                 </div>

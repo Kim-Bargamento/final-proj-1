@@ -123,7 +123,7 @@ body {
   transform: rotate(360deg);
 }
 
-/* input[type="button"] {
+input[type="button"] {
   margin-top: 10px;
   border: none;
   font-family: "Poppins", sans-serif;
@@ -135,7 +135,7 @@ input[type="button"]:hover {
   background-color: #f2b01e;
   color: #fff;
   cursor: pointer;
-} */
+}
 .buy_button {
   display: flex;
   justify-content: center;
@@ -144,6 +144,7 @@ input[type="button"]:hover {
   outline: none;
   border: none;
   cursor: pointer;
+  text-align: center;
 }
 
 /*slider section*/
@@ -466,9 +467,14 @@ input[type="button"]:hover {
   }
 }
 
-body {
+/* body {
   font-family: "Montserrat", sans-serif;
   font-family: "Poppins", sans-serif;
+} */
+
+h1 {
+  text-align: center;
+  padding-top: 15px;
 }
 
 .regis-box {
@@ -483,24 +489,19 @@ body {
   margin: auto;
 }
 
-h1 {
-  text-align: center;
-  padding-top: 15px;
-}
-
-form {
+.form-log {
   width: 300px;
   margin-left: 20px;
 }
 
-form label {
+.form-log label {
   display: flex;
   margin-top: 20px;
   font-size: 18px;
 }
 
-form input {
-  width: 50%;
+.form-log input {
+  width: 90%;
   padding: 7px;
   border: 1px solid gray;
   border-radius: 6px;
@@ -512,7 +513,6 @@ form input {
   justify-content: center;
   align-items: center;
   background: none;
-  width: 50%;
   text-align: center;
 }
 
@@ -546,4 +546,17 @@ form input {
   justify-content: center;
   display: flex;
   align-items: center;
+}
+
+.remove_button {
+  width: 100%;
+  background-color: rgb(247, 2, 2);
+  border-radius: 5px;
+}
+.remove_button:hover {
+  background-color: rgb(245, 62, 62);
+  cursor: pointer;
+}
+.remove-form {
+  width: 60%;
 }

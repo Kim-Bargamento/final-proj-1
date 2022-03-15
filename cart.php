@@ -42,12 +42,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <link rel="stylesheet" href="./css/style.css">
 
-    <title>finalproj</title>
+    <title>FaceWatch</title>
 </head>
 
 <body>
     <div class="container mt-3">
-        <div class="back_button"><a href="index.php"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+        <div class="back_button"><a href="index.php"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="55" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
                 </svg></a> </div>
         <h1 id="head1">Products Table</h1>
@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             while ($row = mysqli_fetch_array($result)) {
                                 echo "<tr>";
                                 echo "<td>" . $row['product_name'] . "</td>";
-                                echo '<td> <img src="' . $row['thumbnail'] . '" width="200" height="150" alt="" /></td>';
+                                echo '<td> <img src="' . $row['thumbnail'] . '" width="200" height="180" alt="" /></td>';
                                 echo "<td>" . $row['quantity'] . "</td>";
                                 echo "<td>" . $row['price'] . "</td>";
                                 echo "<td>";

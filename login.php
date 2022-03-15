@@ -12,14 +12,14 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
 
 $username = "";
 $password = "";
-// $email = "";
+
 
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST["username"]);
     $password = trim($_POST["password"]);
-    // $email = trim($_POST["email"]);
+
 
     // Prepare a select statement
     $sql = "SELECT id, username, password FROM users WHERE username = ?";
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Kimstore</title>
+    <title>FaceWatch</title>
 
 </head>
 
@@ -97,9 +97,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="login-box">
         <h1>Login</h1>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form class="form-log" action="autocomplete <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <label>Username</label>
-            <input type="text" name="username" value="<?php echo $username; ?>">
+            <input type="text" autocomplete="off" name="username" value="<?php echo $username; ?>">
 
             <label>Password</label>
             <input type="password" name="password">
