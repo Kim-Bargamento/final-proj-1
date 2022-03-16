@@ -111,12 +111,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>Registration Form</h1>
         <a href="index.php"></a>
 
-        <form class="form-log" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form class="form-log" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method=" post">
 
             <label>Username</label>
-            <input type="text" autocomplete="off" name="username" value="<?php echo $username; ?>">
+            <input type="text" name="username" value="<?php echo $username; ?>">
             <label>Email</label>
-            <input type="text" name="email" autocomplete="off">
+            <input type="text" name="email">
 
             <label>Password</label>
             <input type="password" name="password">

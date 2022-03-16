@@ -441,7 +441,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-md-4">
                     <div class="box">
                         <div class="img-box">
-                            <img src="./img/download (3).png" width="90" height="100" alt="" />
+                            <img src="./img/download3.png" width="90" height="100" alt="" />
                         </div>
                         <div class="detail-box">
                             <h5>Best Quality</h5>

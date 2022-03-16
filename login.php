@@ -97,9 +97,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="login-box">
         <h1>Login</h1>
 
-        <form class="form-log" action="autocomplete <?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <form class="form-log" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <label>Username</label>
-            <input type="text" autocomplete="off" name="username" value="<?php echo $username; ?>">
+            <input type="text" name="username" value="<?php echo $username; ?>">
 
             <label>Password</label>
             <input type="password" name="password">
